@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <!-- 
+        槽口 slot
+        让组件可扩展性更强
+        混合父组件和子组件的内容
+        简单理解：就是子组件内挖了一个坑，在父组件中，放入内容
+
+        slot 和 slot-scope 已经弃用 新的特带属性 v-slot，v-slot只能用在template和组件上面
+     -->
+    <div id="box">
+        <myslotT>
+            <h3>标题3</h3>
+        </myslotT>
+    </div>
+    <template id="myslotT">
+        <div>
+            <h1>这里是带有slot的组件start</h1>
+            <slot></slot>
+            <h1>这里是带有slot的组件end</h1>
+        </div>
+    </template>
+    <script>
+        let vm = new Vue({
+            el:'#box',
+            data:{
+
+            },
+            components:{
+                myslot:{
+
+                }
+            }
+        })
+    </script>
+</body>
+</html>
